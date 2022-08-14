@@ -1,3 +1,4 @@
+# Lab11 from portswigger: Blind SQL injection with conditional responses.
 import requests
 import sys
 from termcolor import colored
