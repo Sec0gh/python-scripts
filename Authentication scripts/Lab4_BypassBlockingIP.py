@@ -23,7 +23,7 @@ def guess_password(username):
             print(data)
             print(intended_response.history)   
             
-            '''The password will be valid if the username is "carlos" and the direction happened at least one time in the "history" list of the response during logging in so it will be succeeded.'''
+            '''The password will be valid if the username is "carlos" and the direction is happened at least one time in the "history" list of the response during logging in.'''
             
             if (username == "carlos") and (len(intended_response.history) == 1):
                 print(colored(f"[+] Valid password is found... ","green"))
