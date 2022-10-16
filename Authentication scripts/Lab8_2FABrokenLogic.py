@@ -1,6 +1,5 @@
 # Lab8 from portswigger: Broken brute-force protection, IP block.
 # This is a script for guessing the 2FA verification code for the victim.
-from contextlib import _RedirectStream, redirect_stdout
 import requests
 from termcolor import colored
 
