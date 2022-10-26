@@ -7,7 +7,7 @@ from termcolor import colored
 url = "https://0a8f0022035363fcc0ca3664009a009a.web-security-academy.net/my-account" # Set the url.
 
 def cookie_brute_forcer(username):
-    with open("/home/sec0gh/Desktop/passwords.txt","r") as file: # Modify it with the passwords list path.
+    with open("/PATH/passwords.txt","r") as file: # Modify it with the passwords list path.
         for password in file:
             password = password.strip().encode()
 
