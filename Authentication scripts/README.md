@@ -1,4 +1,4 @@
-## Here are some automated scripts that I wrote for some labs from PortSwigger.
+## Here are some automated scripts that I wrote for authentication labs from PortSwigger.
 ### [Lab1: Username enumeration via different responses](https://github.com/Sec0gh/python-scripts/blob/main/Authentication%20scripts/Lab1_username%26password_auth.py)
 
 ### [Lab2: Username enumeration via subtly different responses](https://github.com/Sec0gh/python-scripts/blob/main/Authentication%20scripts/Lab2_username%26password_auth.py)
