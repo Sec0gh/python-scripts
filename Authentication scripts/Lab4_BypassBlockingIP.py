@@ -4,7 +4,7 @@ import requests
 from termcolor import colored
 
 url = "" # Set the url.
-cookies = {"session": "XZ95J2WGZe3iQa2jCkkDrbLnieltBk8d"} # Change it with your cookie value.
+cookies = {"session": "XZ95J2WGZe3iQa2jCkkDrbLnieltBk8d"} # Change it with your session value.
   
 def guess_password(username):
     with open("/PATH/passwords.txt","r") as file: # Modify it with the passwords list path.
