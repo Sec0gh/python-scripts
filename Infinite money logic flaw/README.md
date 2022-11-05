@@ -25,4 +25,5 @@ python3 ExploitLogicFlaw.py "https://0a98002d0427372dc0693b9f00a6008e.web-securi
 
 ## Output
 - The output will look like that and you will find there is an increase in the credit store:
+
 ![ScriptOutput](https://github.com/Sec0gh/python-scripts/blob/main/Infinite%20money%20logic%20flaw/Lab13_ScriptOuptut.png)
