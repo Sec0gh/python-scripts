@@ -1,5 +1,5 @@
 # Automated script to exploit the logic flaw in the `Infinite money logic flaw` Lab from `PortSwigger`
-## Check out the [Infinite money logic flaw lab](https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-infinite-money)#
+## Check out the [Infinite money logic flaw lab](https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-infinite-money)
 
 ## Usage
 ```
