@@ -23,11 +23,11 @@ options:
 Example: python3 ReflectedXSS.py --url https://web-security-academy.net --tags-file /path/tags.txt --events-file
 /path/events.txt --cookie "session=tCZxFr4rWGGBatEbpilZ34OAFUsrzkI9"
 ```
-- The results:
+#### The results:
 
 ![Output.png](https://github.com/Sec0gh/python-scripts/blob/main/XSS/Reflected%20XSS/Output.png)
 
-- Save the results int file:
+#### Save the results into file:
 ```console
 python3 ReflectedXSS.py --url https://0a2200fd0499edb3c00f9511003b0083.web-security-academy.net/ --tags-file tags.txt --events-file events.txt --cookie "session=TsWbozlou7WPLavzjdNeUu8Xb663RGmR" -o payloads.txt
 ```
